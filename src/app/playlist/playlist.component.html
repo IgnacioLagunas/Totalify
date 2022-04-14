@@ -1,0 +1,7 @@
+<div class="playlist_container">
+    <h2 class="sub-title">{{playlist.title}}</h2>
+        <ul>
+            <li (click)="getArtist(artist)" *ngFor="let artist of playlist.artists">{{artist}}</li>
+            
+        </ul>
+</div>

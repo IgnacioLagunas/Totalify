@@ -1,0 +1,36 @@
+.tracks_container {
+  gap: 0.7rem !important;
+}
+
+.track {
+  //   background-color: gray;
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  max-width: 1500px;
+
+  .right_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+    }
+    .info {
+      .name {
+        font-size: 1rem;
+        font-weight: 400;
+      }
+      .artist {
+        font-weight: 400;
+        font-size: 0.75rem;
+        color: #9d9494;
+      }
+    }
+  }
+}

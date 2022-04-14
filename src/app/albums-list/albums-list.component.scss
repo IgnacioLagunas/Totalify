@@ -1,0 +1,40 @@
+.albums_container {
+  gap: 2rem;
+}
+
+.album {
+  display: flex;
+  //   gap: 1rem;
+  height: 200px;
+  background-color: #776277;
+  width: 60%;
+  min-width: 700px;
+  .img_container {
+    height: auto;
+    img {
+      height: 100%;
+    }
+  }
+
+  .info_container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .top_info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      .album_title {
+        margin-bottom: 0.5rem;
+      }
+      h5 {
+        font-weight: 500;
+        font-size: 0.85rem;
+        // margin-left: 0.5rem;
+      }
+    }
+    .album_tracks {
+    }
+  }
+}
