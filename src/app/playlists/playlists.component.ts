@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PlaylistsService } from '../sevices/playlists.service';
+import { ApiService } from '../sevices/api.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 
 
@@ -15,23 +15,26 @@ export class PlaylistsComponent implements OnInit {
   playlists: any = []
   message: String = 'no actualizado';
 
-  constructor(private route: ActivatedRoute, private playlistsService: PlaylistsService) { }
+  constructor(private route: ActivatedRoute, private apiService: ApiService) { }
 
   ngOnInit(): void {
     // let token = window.localStorage.getItem("token")
 
     this.route.queryParams.subscribe(params=>{
       window.localStorage.setItem("token", params["code"])
-      this.token =  window.localStorage.getItem("token")
+      this.token = window.localStorage.getItem("token")
       console.log(this.token)
     })
 
-    this.playlistsService.getPlaylists().subscribe(response=>{
+    this.apiService.getPlaylists().subscribe(response=>{
       this.playlists = response
       this.message = 'Actualizado'
       console.log(this.playlists.playlists)
     });
 
+    this.apiService.getArtist().subscribe(response=>{
+      console.log(response)
+    });
 
   }
 
